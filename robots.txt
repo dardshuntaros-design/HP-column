@@ -1,0 +1,33 @@
+# ダード株式会社 - すべてのクローラー（検索エンジン・AI）のアクセスを許可
+User-agent: *
+Allow: /
+
+# AI検索・生成AIクローラーも明示的に許可（LLMO対策）
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://dardshuntaros-design.github.io/HP-column/sitemap.xml
