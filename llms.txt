@@ -30,7 +30,7 @@
 ## 主要ページ
 
 - [ホーム](https://dardshuntaros-design.github.io/HP-column/): 会社方針・製造OEM・安全への取り組み・会社概要・お問い合わせ
-- [素材情報(一覧)](https://dardshuntaros-design.github.io/HP-column/materials.html): 取扱素材の一覧と品質管理・会社情報
+- [原料カタログ(一覧)](https://dardshuntaros-design.github.io/HP-column/materials.html): 取扱原料の一覧とコラム
 - [馬プラセンタ原料](https://dardshuntaros-design.github.io/HP-column/horse-placenta.html)
 - [豚プラセンタ原料](https://dardshuntaros-design.github.io/HP-column/pig-placenta.html)
 - [牛プラセンタ原料](https://dardshuntaros-design.github.io/HP-column/cow-placenta.html)
@@ -38,6 +38,7 @@
 - [その他のエキス原料](https://dardshuntaros-design.github.io/HP-column/extracts.html)
 - [研究用畜産原料](https://dardshuntaros-design.github.io/HP-column/research-materials.html)
 - [よくあるご質問(原料調達FAQ)](https://dardshuntaros-design.github.io/HP-column/faq.html)
+- [品質管理・トレーサビリティ(許認可・会社情報)](https://dardshuntaros-design.github.io/HP-column/quality.html)
 - [コラム(原料の基礎知識)](https://dardshuntaros-design.github.io/HP-column/column.html)
 - [コラム: 牛プラセンタはなぜ日本で使えるようになったのか](https://dardshuntaros-design.github.io/HP-column/column-cow-placenta-deregulation.html)
 
