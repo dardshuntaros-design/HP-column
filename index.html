@@ -42,7 +42,57 @@
     "postalCode": "105-0012",
     "addressCountry": "JP"
   },
-  "telephone": "+81-3-6413-6813",
+  "telephone": "+81-3-5777-6246",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "name": "医薬品販売事業所（お問い合わせ窓口）",
+    "telephone": "+81-3-6413-6813",
+    "faxNumber": "+81-3-5777-6247",
+    "areaServed": "JP",
+    "availableLanguage": ["ja", "en"]
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "医薬品販売事業所（お問い合わせ窓口）",
+      "telephone": "+81-3-6413-6813",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "柳橋1丁目29番7号 五十栄ビル604号室",
+        "addressLocality": "台東区",
+        "addressRegion": "東京都",
+        "postalCode": "111-0052",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "芽室工場",
+      "telephone": "+81-155-62-0194",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "東芽室基線19番38号",
+        "addressLocality": "河西郡芽室町",
+        "addressRegion": "北海道",
+        "postalCode": "082-0005",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "知覧作業所",
+      "telephone": "+81-993-59-3732",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "知覧町南別府22361 株式会社JA食肉かごしま南薩工場内",
+        "addressLocality": "南九州市",
+        "addressRegion": "鹿児島県",
+        "postalCode": "891-0912",
+        "addressCountry": "JP"
+      }
+    }
+  ],
   "sameAs": ["https://twitter.com/pr_dard"],
   "knowsAbout": ["馬プラセンタ", "豚プラセンタ", "牛プラセンタ", "プラセンタエキス", "トロンビン", "研究用畜産原料", "畜産副生物の有効利用", "医薬部外品原料規格2006"]
 }
@@ -81,8 +131,14 @@
   <p><a href="./materials.html">素材別の詳しい解説・よくあるご質問はこちら</a></p>
   <h2>お問い合わせ</h2>
   <p>ダード株式会社（設立：平成12年10月2日／代表取締役：鎌田 俊成）<br>
-  医薬品販売事業所：〒111-0052 東京都台東区柳橋1-29-7 五十栄ビル604号室 TEL 03-6413-6813<br>
-  北海道：芽室工場／鹿児島県：知覧作業所</p>
+  本社（登記所在地）：〒105-0012 東京都港区芝大門2-4-5 芝ダイヤハイツ405号室 TEL 03-5777-6246<br>
+  医薬品販売事業所（お問い合わせ窓口）：〒111-0052 東京都台東区柳橋1-29-7 五十栄ビル604号室 TEL 03-6413-6813<br>
+  北海道：芽室工場／鹿児島県：知覧作業所<br>
+  ※ご契約書・ご請求書など社名住所の記載が必要な書類は本社宛、原料に関するご相談・お見積りは医薬品販売事業所宛にお願いいたします。</p>
+  <h2>ご提出可能な資料</h2>
+  <p>製品規格書／SDS（安全データシート）／試験成績書（CoA）／原料由来証明／トレーサビリティ関連資料／許認可関係資料 等。ご提出可能な資料は製品により異なります。詳細はお問い合わせください。</p>
+  <h2>無償サンプル</h2>
+  <p>粉末製品は5gまで、液体製品は10mLまでを無償でご提供いたします。上記を超える数量、また特別な規格でのご用命は個別にご相談ください。ご依頼時に用途（医薬品／化粧品／健康食品／研究用）と想定数量をお知らせいただけますと、適したグレードをご提案いたします。</p>
 </main>
 </noscript>
 
@@ -262,15 +318,11 @@
   </main>
   </sc-if>
 
-  <!-- ===================== ROCKET BANNER (home only) ===================== -->
-  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
-    <div style="position:fixed; right:20px; bottom:20px; z-index:45; display:flex; flex-direction:column; align-items:center; gap:6px; overflow:visible; pointer-events:none;">
-      <div class="rocket-bob-inner{{ rocketFrozenClass }}" onClick="{{ launchRocket }}" style="display:inline-block; cursor:pointer; pointer-events:auto; transform:{{ rocketBobFreeze }};">
-        <img src="rocket.png" alt="{{ L.rocketBannerLabel }}" style="{{ rocketImgStyle }}">
-      </div>
-      <span onClick="{{ launchRocket }}" style="cursor:pointer; pointer-events:auto; {{ rocketLabelStyle }}">{{ L.rocketBannerLabel }}</span>
-    </div>
-  </sc-if>
+  <!-- ===================== ROCKET BANNER (home only) — 削除済み =====================
+       右下に固定表示していたロケットアイコン（ふわふわ浮く表示）を削除しました。
+       ロケットページへの導線は、グローバルナビとフッターの「ロケット打上げのご案内」で維持されています。
+       ※復活させる場合は git 履歴からこのブロックを戻してください（CSS/JS 側は残してあります）。
+  ============================================================================= -->
 
   <!-- ===================== NEWS DETAIL ===================== -->
   <sc-if value="{{ isNewsDetail }}" hint-placeholder-val="{{ false }}">
@@ -461,6 +513,18 @@
         </div>
       </div>
     </section>
+
+    <!-- 品質保証・購買担当者向けの導線（許認可／ご提出可能な資料／無償サンプル） -->
+    <section style="padding:0 clamp(20px,5vw,60px) 72px;">
+      <div style="max-width:1180px; margin:0 auto; background:var(--tint,#e9f2f3); border-radius:14px; padding:36px clamp(20px,4vw,44px);">
+        <h2 style="font-size:clamp(19px,4vw,24px); font-weight:900; color:var(--brand,#1d5566); line-height:1.6; margin:0;">{{ L.safetyDocsH }}</h2>
+        <p style="font-size:16px; color:#333333; line-height:2; margin-top:16px; white-space:{{ wsPre }};">{{ L.safetyDocsBody }}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:26px;">
+          <a href="{{ L.qualityHref }}" style="display:inline-block; padding:13px 28px; background:var(--brand,#1d5566); color:#fbf9f4; border-radius:{{ br }}; font-weight:700; font-size:15.5px; text-decoration:none;">{{ L.safetyDocsBtn1 }}</a>
+          <span onClick="{{ goContact }}" style="cursor:pointer; display:inline-block; padding:13px 28px; background:#fbf9f4; color:var(--brand,#1d5566); border:1.5px solid var(--brand,#1d5566); border-radius:{{ br }}; font-weight:700; font-size:15.5px;">{{ L.safetyDocsBtn2 }}</span>
+        </div>
+      </div>
+    </section>
   </main>
   </sc-if>
 
@@ -642,12 +706,12 @@
 
     <section style="position:relative; z-index:1; padding:{{ sectionPad }};">
       <div style="max-width: 760px; margin: 0 auto; text-align: center; font-weight: 700; color: #1a1a1a;">
-        <div style="font-size:clamp(9px,2.85vw,23px); white-space:pre; line-height:1.8;">私たちが届けたいのは、原料だけではありません。</div>
-        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; margin: 20px 0px; white-space:pre;">尊い命を、最後まで活かすという考え方です。</div>
-        <div style="font-size:clamp(9px,2.85vw,23px); white-space:pre; line-height:1.8; margin-top:20px;">いただいた命を、医薬品や化粧品、健康食品へ。</div>
-        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; white-space:pre; line-height:1.8; margin-top:1em;">安全を第一に。品質を第一に。</div>
-        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; white-space:pre; line-height:1.8;">そして、未来へつなぐために。</div>
-        <div style="font-size:clamp(9px,2.85vw,23px); white-space:pre; line-height:1.8; margin-top:20px;">ダードはこれからも、未利用副生物に新たな価値を生み出し続けます。</div>
+        <div style="font-size:clamp(9px,2.85vw,23px); white-space:{{ wsPre }}; line-height:1.8;">{{ L.storyEnd1 }}</div>
+        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; margin: 20px 0px; white-space:{{ wsPre }};">{{ L.storyEnd2 }}</div>
+        <div style="font-size:clamp(9px,2.85vw,23px); white-space:{{ wsPre }}; line-height:1.8; margin-top:20px;">{{ L.storyEnd3 }}</div>
+        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; white-space:{{ wsPre }}; line-height:1.8; margin-top:1em;">{{ L.storyEnd4 }}</div>
+        <div style="font-size:clamp(12px,4.1vw,31px); font-weight: 900; white-space:{{ wsPre }}; line-height:1.8;">{{ L.storyEnd5 }}</div>
+        <div style="font-size:clamp(9px,2.85vw,23px); white-space:{{ wsPre }}; line-height:1.8; margin-top:20px;">{{ L.storyEnd6 }}</div>
       </div>
       <img src="dard-logo.gif" alt="DARD symbol mark" style="display:block; margin:32px auto 0; height:64px; width:auto;">
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:32px;">
@@ -719,6 +783,12 @@
         <div style="font-family:'DM Mono',monospace; font-size:27px; font-weight:500; color:#2b312a; margin-top:14px;">03-6413-6813</div>
         <p style="font-size:14px; color:#333333; margin-top:6px;">{{ L.asideHours }}</p>
         <div style="font-family:'DM Mono',monospace; font-size:16px; font-weight:500; color:#2b312a; margin-top:10px;">FAX 03-5777-6247</div>
+        <div style="height:1px; background:#e0dccf; margin:24px 0;"></div>
+        <div style="font-weight:700; color:var(--brand,#1d5566); font-size:15px;">{{ L.asideSampleT }}</div>
+        <p style="font-size:14.5px; color:#333333; line-height:1.9; margin-top:8px; white-space:{{ wsPre }};">{{ L.asideSampleV }}</p>
+        <div style="height:1px; background:#e0dccf; margin:24px 0;"></div>
+        <div style="font-weight:700; color:var(--brand,#1d5566); font-size:15px;">{{ L.asideDocsT }}</div>
+        <p style="font-size:14.5px; color:#333333; line-height:1.9; margin-top:8px; white-space:{{ wsPre }};">{{ L.asideDocsV }}</p>
         <div style="height:1px; background:#e0dccf; margin:24px 0;"></div>
         <p style="font-size:14.5px; color:#333333; line-height:1.9; white-space:{{ wsPre }};">{{ L.asideAddr }}</p>
       </aside>
@@ -1056,6 +1126,17 @@ class Component extends DCLogic {
       catLabel: '牛', catD: '2013年のOIEによる日本BSE清浄国宣言から5年間、弊社がウシ由来のプラセンタの安全性を行政に唱え続け、2018年から厳格な管理のもとでの使用が認められました。',
       horseLabel: '馬', horseD: '世界で唯一！帯広で開催され「ばんえい競馬」で活躍する重種馬由来の胎盤を使用しています。\nそのアミノ酸含有量は豚プラセンタの300倍を誇ります。',
       safetyH1: '安全への取り組み', safetyH2: '安全は、偶然ではなく仕組みから。',
+      storyEnd1: '私たちが届けたいのは、原料だけではありません。',
+      storyEnd2: '尊い命を、最後まで活かすという考え方です。',
+      storyEnd3: 'いただいた命を、医薬品や化粧品、健康食品へ。',
+      storyEnd4: '安全を第一に。品質を第一に。',
+      storyEnd5: 'そして、未来へつなぐために。',
+      storyEnd6: 'ダードはこれからも、未利用副生物に新たな価値を生み出し続けます。',
+      safetyDocsH: '許認可・ご提出可能な資料について',
+      safetyDocsBody: '医薬品製造業許可をはじめとする各種許認可を取得しています。\n製品規格書・SDS・試験成績書（CoA）・原料由来証明・トレーサビリティ関連資料などをご提出できます（製品により異なります）。\n粉末製品は5gまで、液体製品は10mLまでを無償サンプルとしてご提供しています。',
+      safetyDocsBtn1: '許認可・品質管理体制を見る',
+      safetyDocsBtn2: '資料・サンプルのご依頼',
+      qualityHref: './quality.html',
       safetyP: '動物由来原料において、何よりも重要なのは「安全の確保」です。\n\nダードでは、自社スタッフが原料の採取・製造・品質確認まで一貫して管理しています。\n国内で定められた規格はもちろん、独自に定めた厳格な品質基準のもと徹底した品質管理を行い、\n安心してご使用いただける原料だけをお届けします。',
       s1t: '国産の証明', s1d: '国内産地を明確に開示。',
       s2t: '検査・記録', s2d: '各工程の検査記録を保管。',
@@ -1082,9 +1163,13 @@ class Component extends DCLogic {
       privacyNotice: '＜個人情報の利用目的＞\nお客様よりお預かりした個人情報は、以下の目的に限定し利用させていただきます。\n・本サービスに関する顧客管理\n・本サービスの運営上必要な事項のご連絡\n\n＜個人情報の提供について＞\n当社ではお客様の同意を得た場合または法令に定められた場合を除き、\n取得した個人情報を第三者に提供することはいたしません。\n\n＜個人情報の安全管理＞\n当社では、個人情報の漏洩等がなされないよう、適切に安全管理対策を実施します。\n\n＜個人情報の開示･訂正・削除･利用停止の手続について＞\n当社では、お客様の個人情報の開示･訂正･削除・利用停止の手続を定めさせて頂いております。\nご本人である事を確認のうえ、対応させて頂きます。\n個人情報の開示･訂正･削除・利用停止の具体的手続きにつきましては、お電話でお問合せ下さい。',
       btnSend: '送信する',
       asideH: 'お電話でのお問い合わせ', asideHours: '営業窓口（平日 9:00–17:00）',
-      asideAddr: '〒111-0052\n東京都台東区柳橋1-29-7\n五十栄ビル604号室',
+      asideSampleT: '無償サンプルのご提供',
+      asideSampleV: '粉末製品：5gまで\n液体製品：10mLまで\n\n上記を超える数量や特別な規格でのご用命は、個別にご相談ください。\nご依頼の際は用途（医薬品／化粧品／健康食品／研究用）と想定数量をお知らせください。',
+      asideDocsT: 'ご提出可能な資料',
+      asideDocsV: '製品規格書／SDS／試験成績書（CoA）\n原料由来証明／トレーサビリティ関連資料\n許認可関係資料　等\n\n※製品により異なります。詳細はお問い合わせください。',
+      asideAddr: '医薬品販売事業所（お問い合わせ窓口）\n〒111-0052\n東京都台東区柳橋1-29-7\n五十栄ビル604号室\n\n※ご契約書・ご請求書など、社名住所の記載が必要な書類は本社宛にお願いいたします。\n本社：〒105-0012 東京都港区芝大門2-4-5 芝ダイヤハイツ405号室',
       footName: 'ダード株式会社',
-      footAddr: '医薬品販売事業所\n〒111-0052 東京都台東区柳橋1-29-7 五十栄ビル604号室\nTEL 03-6413-6813　／　FAX 03-5777-6247（本社共通）',
+      footAddr: '本社（登記所在地）\n〒105-0012 東京都港区芝大門2-4-5 芝ダイヤハイツ405号室\nTEL 03-5777-6246\n\n医薬品販売事業所（お問い合わせ窓口）\n〒111-0052 東京都台東区柳橋1-29-7 五十栄ビル604号室\nTEL 03-6413-6813　／　FAX 03-5777-6247（本社共通）',
       fConcept: '会社方針', fProducts: '製造・OEM', fSafety: '安全への取り組み', fRocket: 'ロケット打上げのご案内', fCompany: '会社概要', fContact: 'お問い合わせ',
       profile: [
         { k: '会社名', v: 'ダード株式会社' },
@@ -1098,6 +1183,8 @@ class Component extends DCLogic {
         { k: '取引銀行', v: '三菱東京ＵＦＪ銀行、三井住友銀行、とみん銀行　その他' },
         { k: '主要関連取引企業', v: 'ダード株式会社（北海道）\n株式会社北海道畜産公社　十勝工場\n株式会社　ＪＡ食肉かごしま\nテルモ株式会社\nフナコシ株式会社\nビタエックス薬品工業株式会社\n株式会社　ジェイ・エム・エス\n新日本薬業株式会社\n　その他医薬品・化粧品関連製造業上場企業多数' },
         { k: '許認可', v: '医薬品製造業許可（ダード株式会社（北海道））\n医薬部外品製造業許可（ダード株式会社（北海道））\n化粧品製造業許可（ダード株式会社（北海道））\n添加物製造業許可（ダード株式会社（北海道））\n医薬品販売業許可\n食肉処理業の営業許可\n農林水産大臣による製造基準適合確認取得（FAMIC）' },
+        { k: 'ご提出可能な資料', v: '製品規格書／SDS（安全データシート）／試験成績書（CoA）／原料由来証明／トレーサビリティ関連資料／許認可関係資料　等\n※ご提出可能な資料は製品により異なります。詳細はお問い合わせください。' },
+        { k: '無償サンプル', v: '粉末製品：5gまで／液体製品：10mLまで を無償でご提供いたします。\n上記を超える数量、また特別な規格でのご用命は個別にご相談ください。\n※ご依頼時に用途（医薬品／化粧品／健康食品／研究用）と想定数量をお知らせいただけますと、適したグレードをご提案いたします。' },
       ],
       news: [
         { date: '2022.08.01', tag: '採用', title: '薬剤師・工場スタッフを募集しています（東京本社・北海道帯広工場）', body: '東京本社および北海道帯広工場にて、薬剤師・工場スタッフを募集しております。詳細は採用情報ページをご確認ください。' },
@@ -1195,6 +1282,17 @@ class Component extends DCLogic {
       catLabel: 'Cattle', catD: 'Five years after the OIE declared Japan BSE-free, our efforts led to bovine placenta being approved for use in 2018. "Cattle" has also been added to the Japanese Standards of Quasi-drug Ingredients 2006.',
       horseLabel: 'Horse', horseD: 'The only one of its kind in the world! We use placenta from the draft horses that race in Obihiro\u2019s "Banei" horse racing.',
       safetyH1: 'Commitment to Safety', safetyH2: 'Safety comes from systems, not chance.',
+      storyEnd1: 'What we deliver is more than raw materials.',
+      storyEnd2: 'It is a belief in using every life to the fullest.',
+      storyEnd3: 'Life given by animals, carried into medicines, cosmetics and health foods.',
+      storyEnd4: 'Safety first. Quality first.',
+      storyEnd5: 'And carried into the future.',
+      storyEnd6: 'DARD will keep creating new value from unused livestock by-products.',
+      safetyDocsH: 'Licenses and Documents Available on Request',
+      safetyDocsBody: 'We hold a range of licenses, including a Pharmaceutical Manufacturing License.\nWe can provide product specification sheets, SDS, Certificates of Analysis (CoA), certificates of raw material origin and traceability documentation (availability varies by product).\nFree samples are offered up to 5 g for powder products and up to 10 mL for liquid products.',
+      safetyDocsBtn1: 'View Licenses & Quality System',
+      safetyDocsBtn2: 'Request Documents or Samples',
+      qualityHref: './quality-en.html',
       safetyP: 'For animal-derived materials, nothing matters more than ensuring safety.\n\nAt DARD, our own staff manage everything consistently, from collecting raw materials to manufacturing and quality checks.\nUnder our own strict quality standards, on top of the requirements set by domestic regulations, we carry out thorough quality control,\nand deliver only materials you can use with peace of mind.',
       s1t: 'Proof of Domestic Origin', s1d: 'Clearly disclosing the domestic production area.',
       s2t: 'Inspection & Records', s2d: 'Retaining inspection records for every process.',
@@ -1221,9 +1319,13 @@ class Component extends DCLogic {
       privacyNotice: '<Purpose of Use>\nPersonal information we receive from customers is used only for the following purposes:\n・Customer management related to this service\n・Communications necessary for operating this service\n\n<Provision to Third Parties>\nWe will not provide acquired personal information to third parties except with the customer\u2019s consent or as required by law.\n\n<Safety Management>\nWe implement appropriate safety management measures to prevent leakage of personal information.\n\n<Disclosure, Correction, Deletion, and Suspension of Use>\nWe have established procedures for the disclosure, correction, deletion, and suspension of use of customers\u2019 personal information.\nWe will respond after confirming the identity of the requester.\nFor specific procedures regarding disclosure, correction, deletion, or suspension of use, please contact us by phone.',
       btnSend: 'Send',
       asideH: 'Contact by Phone', asideHours: 'Sales desk (Weekdays 9:00–17:00)',
-      asideAddr: 'Isoei Bldg. 604\n1-29-7 Yanagibashi, Taito-ku\nTokyo 111-0052',
+      asideSampleT: 'Free Samples',
+      asideSampleV: 'Powder products: up to 5 g\nLiquid products: up to 10 mL\n\nFor larger quantities or custom specifications, please contact us.\nPlease let us know the intended use (pharmaceutical / cosmetic / health food / research) and the expected volume.',
+      asideDocsT: 'Documents Available on Request',
+      asideDocsV: 'Product specification sheets / SDS / Certificates of Analysis (CoA)\nCertificates of raw material origin / Traceability documentation\nLicensing documentation, etc.\n\n*Available documents vary by product. Please contact us for details.',
+      asideAddr: 'Pharmaceutical Sales Office (Inquiries)\nIsoei Bldg. 604\n1-29-7 Yanagibashi, Taito-ku\nTokyo 111-0052\n\nNote: Please address contracts, invoices and other official documents to our Head Office.\nHead Office: Shiba Daiya Heights 405, 2-4-5 Shibadaimon, Minato-ku, Tokyo 105-0012',
       footName: 'DARD Co., Ltd.',
-      footAddr: 'Isoei Bldg. 604, 1-29-7 Yanagibashi, Taito-ku, Tokyo 111-0052\nTEL 03-6413-6813 / FAX 03-5777-6247',
+      footAddr: 'Head Office (Registered)\nShiba Daiya Heights 405, 2-4-5 Shibadaimon, Minato-ku, Tokyo 105-0012\nTEL 03-5777-6246\n\nPharmaceutical Sales Office (Inquiries)\nIsoei Bldg. 604, 1-29-7 Yanagibashi, Taito-ku, Tokyo 111-0052\nTEL 03-6413-6813 / FAX 03-5777-6247',
       fConcept: 'About', fProducts: 'Manufacturing & OEM', fSafety: 'Safety', fRocket: 'Rocket Launch', fCompany: 'Company', fContact: 'Contact',
       profile: [
         { k: 'Company Name', v: 'DARD Co., Ltd.' },
@@ -1237,6 +1339,8 @@ class Component extends DCLogic {
         { k: 'Banks', v: 'MUFG Bank, Sumitomo Mitsui Banking Corporation, Tomin Bank, and others' },
         { k: 'Major Partners', v: 'DARD Co., Ltd. (Hokkaido)\nHokkaido Livestock Corporation, Tokachi Plant, Doto Office\nJA Meat Kagoshima Co., Ltd.\nTerumo Corporation\nFunakoshi Co., Ltd.\nVitaX Pharmaceutical Co., Ltd.\nJMS Co., Ltd.\nShin Nihon Yakugyo Co., Ltd.\nand many other listed pharmaceutical and cosmetic manufacturers' },
         { k: 'Licenses', v: 'Pharmaceutical Manufacturing License (DARD Co., Ltd. [Hokkaido])\nQuasi-drug Manufacturing License (DARD Co., Ltd. [Hokkaido])\nCosmetic Manufacturing License (DARD Co., Ltd. [Hokkaido])\nFood Additive Manufacturing License (DARD Co., Ltd. [Hokkaido])\nPharmaceutical Sales License\nMeat Processing Business License\nManufacturing Standard Conformity Confirmation by the Minister of Agriculture, Forestry and Fisheries (FAMIC)' },
+        { k: 'Documents Available on Request', v: 'Product specification sheets / SDS (Safety Data Sheets) / Certificates of Analysis (CoA) / Certificates of raw material origin / Traceability documentation / Licensing documentation, etc.\n*Available documents vary by product. Please contact us for details.' },
+        { k: 'Free Samples', v: 'Powder products: up to 5 g / Liquid products: up to 10 mL, free of charge.\nFor larger quantities or custom specifications, please contact us.\n*Please let us know the intended use (pharmaceutical / cosmetic / health food / research) and the expected volume so that we can propose a suitable grade.' },
       ],
       news: [
         { date: '2022.08.01', tag: 'Careers', title: 'Now hiring pharmacists and factory staff (Tokyo HQ / Obihiro, Hokkaido Plant)', body: 'We are hiring pharmacists and factory staff at our Tokyo head office and Obihiro, Hokkaido plant. Please see our Careers page for details.' },
